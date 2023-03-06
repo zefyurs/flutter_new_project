@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:zef/pages/add_medicine/add_medicine_page.dart';
 
 class AddAlarmPage extends StatelessWidget {
   const AddAlarmPage(
@@ -13,8 +14,12 @@ class AddAlarmPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Column(
-      children: [Image.file(medicineImage), Text(medicineName)],
-    ));
+        appBar: AppBar(),
+        body: AddPageBody(
+          children: [
+            medicineName == null ? Container() : Image.file(medicineImage!),
+            Text(medicineName),
+          ],
+        ));
   }
 }
